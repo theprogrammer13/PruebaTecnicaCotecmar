@@ -32,7 +32,7 @@ return [
     ],
 
     'auth_api' => [
-        'url' => env('AUTH_API_URL', 'http://localhost:8000/api/'),
+        'url' => env('AUTH_API_URL', 'http://localhost:8000/api/'), //Ruta del Api
     ],
 
 ];

@@ -46,7 +46,7 @@
 import { useForm } from '@inertiajs/vue3';
 
 const form = useForm({
-  username: '',  // Cambiado de email a username para coincidir con tu controlador
+  username: '', 
   password: '',
 });
 

@@ -29,7 +29,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $tokenData = $this->authService->login(
-            $request->username, // o email, dependiendo de tu campo
+            $request->username, 
             $request->password
         );
 
@@ -37,7 +37,7 @@ class AuthController extends Controller
             return back()
                 ->withInput($request->only('username')) // Mantener el valor del campo
                 ->withErrors([
-                    'username' => 'Credenciales inválidas', // Asegúrate que coincida con el nombre del campo en el formulario
+                    'username' => 'Credenciales inválidas',
                 ]);
         }
 
