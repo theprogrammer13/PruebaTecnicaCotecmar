@@ -1,8 +1,8 @@
-# Sistema de Gestión de Piezas para Minucia
+# Sistema de Gestión de Piezas
 
 ## Requerimiento Inicial
 
-El objetivo de este proyecto es desarrollar una aplicación web para visualizar y gestionar el listado de piezas registradas en Minucia. La solución implementa:
+El objetivo de este proyecto es desarrollar una aplicación web para visualizar y gestionar el listado de piezas registradas. La solución implementa:
 
     *Autenticación de usuarios: Con validación de credenciales y protección de rutas.
 
