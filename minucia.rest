@@ -1,0 +1,174 @@
+### 1. Login - Luis
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "username": "luis",
+    "password": "0000"
+}
+
+
+### 2. Login - Gabriel
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "username": "gabriel",
+    "password": "1111"
+}
+
+
+### 3. Login - Sergio
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "username": "sergio",
+    "password": "2222"
+}
+
+
+### 4. Obtener usuario autenticado (requiere token)
+GET http://localhost:8000/api/user
+Authorization: Bearer 2BSLI3tMyqMqRLoSeeS9IRBgzrPtg8aOwURhEhXyJakYAxwxP2iJqzqYnfqD
+
+
+### 5. Logout (requiere token)
+POST http://localhost:8000/api/logout
+Authorization: Bearer 2BSLI3tMyqMqRLoSeeS9IRBgzrPtg8aOwURhEhXyJakYAxwxP2iJqzqYnfqD
+
+
+### 6. Listar todas las piezas (requiere token)
+GET http://localhost:8000/api/parts
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+
+### 7. Crear nueva pieza (requiere token)
+POST http://localhost:8000/api/parts
+Content-Type: application/json
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+{
+    "id":"111",
+    "name": "N01",
+    "theoretical_weight": 15.5,
+    "real_weight": 15.2,
+    "block_id": "130-1110"
+}
+
+
+### 8. Obtener pieza específica (requiere token)
+GET http://localhost:8000/api/parts/111
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+
+### 9. Actualizar pieza (requiere token)
+PUT http://localhost:8000/api/parts/111
+Content-Type: application/json
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+{
+    "real_weight": 4.7,
+    "status": "Fabricado"
+}
+
+
+### 10. Eliminar pieza (requiere token)
+DELETE http://localhost:8000/api/parts/111
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+
+
+
+
+#######
+GET http://127.0.0.1:8000/api/projects
+Authorization: Bearer {{token}}
+
+
+#######
+GET http://127.0.0.1:8000/api/projects/BICM
+Authorization: Bearer {{token}}
+
+
+#######
+POST http://127.0.0.1:8000/api/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "id": "TESTP",
+    "name": "Proyecto de Prueba"
+}
+
+
+#######
+PUT http://127.0.0.1:8000/api/projects/TESTP
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "Proyecto Actualizado"
+}
+
+
+#######
+DELETE http://127.0.0.1:8000/api/projects/TESTP
+Authorization: Bearer {{token}}
+
+### Blocks CRUD
+#######
+GET http://127.0.0.1:8000/api/blocks
+Authorization: Bearer {{token}}
+
+
+#######
+GET http://127.0.0.1:8000/api/blocks/130-1110
+Authorization: Bearer {{token}}
+
+
+#######
+GET http://127.0.0.1:8000/api/projects/BICM/blocks
+Authorization: Bearer {{token}}
+
+
+#######
+POST http://127.0.0.1:8000/api/blocks
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "id": "999-9999",
+    "name": "Bloque de Prueba",
+    "project_id": "BICM"
+}
+
+
+#######
+PUT http://127.0.0.1:8000/api/blocks/999-9999
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "Bloque Actualizado"
+}
+
+
+#######
+DELETE http://127.0.0.1:8000/api/blocks/999-9999
+Authorization: Bearer {{token}}
+
+
+
+
+
+
+
+### 14. Reporte de piezas pendientes (requiere token)
+GET http://localhost:8000/api/reports/pending-parts
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
+
+
+### 15. Reporte gráfico por proyecto (requiere token)
+GET http://localhost:8000/api/reports/project-status
+Authorization: Bearer rkyDJJjp8xWWez3URd69wB8YobkeFkSQFa47cZal2qOLWP0hLbFaw66OeltN
